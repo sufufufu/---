@@ -1,0 +1,46 @@
+@import "reset";/*崁入scss*/
+@import "var";
+@include font-size;
+@include font-weight;
+@include arg-display;
+
+@include colors-set(text);
+@include colors-set(bg);
+@include colors-set(btn);
+
+@include wrap;
+
+@include cols-global(block);
+@include cols-global(flex);
+
+@include cols-media(block, $xs, xs);
+@include cols-media(block, $sm, sm);
+@include cols-media(block, $md, md);
+@include cols-media(block, $lg, lg);
+@include cols-media(block, $xl, xl);
+
+@include cols-media(flex, $xs, xs);
+@include cols-media(flex, $sm, sm);
+@include cols-media(flex, $md, md);
+@include cols-media(flex, $lg, lg);
+@include cols-media(flex, $xl, xl);
+
+@include jt-ac(justify-content);
+@include jt-ac(align-content);
+@include ai(align-items);
+@include ai(align-self);
+@include text-align;
+
+@include normar-use;
+
+@include spacing;
+@include sprite;
+
+
+
+
+
+
+
+
+

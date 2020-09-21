@@ -1,0 +1,66 @@
+:root{ //
+font-size: 16px;
+}
+*,html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video { /* 在 { 之前的所有項目為選擇器*/
+	margin: 0;/* 外距 這個元素向外的距離*/
+	padding: 0;/*內距 這個元素向內的距離 */
+	border: 0;/*框線*/
+	font-size: 100%;
+	//font: inherit;  //會把所以有的東西都把格式清除
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html,body{
+  width:100%;
+  height:100%;
+}
+body {
+  line-height: 1.15;//這樣才不會 p的屬性 太小
+  overflow-y: auto;
+  overflow-x: hidden; //治標不自本的方法
+  box-sizing: border-box;//重製歸零沒有寫這個
+& *,
+& *::before,//before和after是偽元素 要寄生在別的不是空標籤的
+& *::after{ //before和after一定要搭配content使用  可以是文字或是圖片
+  box-sizing:border-box;
+  //content:"abc";
+}//& *
+}
+ol, ul {
+	list-style: none;
+}
+a{
+  color:inherit;
+  text-decoration: none;
+  transsition:all linear .3s;
+  display:inline-block;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+

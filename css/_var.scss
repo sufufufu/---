@@ -1,0 +1,495 @@
+$cols: 12;
+$gutter: 1rem;
+$max: 100%;
+$max-px: 1920px;
+$normal: 1360px;
+$limit: 1024px;
+$fl: left;
+$fr: right;
+$d-b: block;
+$d-ib: inline-block;
+$d-f: flex;
+$d-if: inline-flex;
+$d-t: table;
+$pos-r: relative;
+$pos-ab: absolute;
+$pos-f: fixed;
+$mh-100: 100vmin;
+$xs: 320px;
+$sm: 640px;
+$md: 800px;
+$lg: 1024px;
+$xl: 1360px;
+
+
+//colors
+$white:    #ffffff ;
+$gray-100: #f8f9fa ;
+$gray-200: #e9ecef ;
+$gray-300: #dee2e6 ;
+$gray-400: #ced4da ;
+$gray-500: #adb5bd ;
+$gray-600: #6c757d ;
+$gray-700: #495057 ;
+$gray-800: #343a40 ;
+$gray-900: #212529 ;
+$black:    #000000 ;
+
+$blue:#0060F9;
+$indigo:#6e329b;
+$green:#007a45;
+$teal:#27a7b8;
+$cyan:#007f7f;
+$purple:#8968cd;
+$pink:#e889a8;
+$orange:#ee7227;
+$yellow:#ffc125;
+$red:#cd1e32;
+$faded:#b2b2b2;
+$muted:#72787c;
+$dark:#2e2e2e;
+
+
+$steps:6%;
+
+/*顏色*/
+$colors-merge:(
+white $white,
+gray-100 $gray-100,
+gray-200 $gray-200,
+gray-300 $gray-300,
+gray-400 $gray-400,
+gray-500 $gray-500,
+gray-600 $gray-600,
+gray-700 $gray-700,
+gray-800 $gray-800,
+gray-900 $gray-900,
+black $black,
+blue $blue,
+indigo $indigo,
+green $green,
+teal $teal,
+cyan $cyan,
+purple $purple,
+pink $pink,
+orange $orange,
+yellow $yellow,
+red $red,
+faded $faded,
+muted $muted,
+dark $dark,
+
+);
+
+@mixin colors-set($prefix) {
+  @each $color, $prop in $colors-merge {
+    @if($prefix == 'text') {
+      .#{$prefix}-#{$color} {
+        color: #{$prop};
+      }
+    }//if
+
+    @else if($prefix == 'btn') {    
+      .#{$prefix}-#{$color} {
+        background-color: #{$prop};
+        @if($prop == $white or $prop == $faded) {
+          color: $dark;
+          &:hover {
+            background-color: darken($prop, $steps);
+            color: $black;
+          }
+        }//inner if
+        @else {
+          color: $faded;
+          &:hover {
+            background-color: darken($prop, $steps);
+            color: $white;
+          }
+        }//inner else
+      }//class
+    }//else if
+    
+    @else {
+      .#{$prefix}-#{$color} {
+        background-color: #{$prop};
+        @if ($prop == $white) {
+          color: $dark;
+        }
+        @else if($prop == $faded) {
+          color: $black;
+        }
+        @else {
+          color: $white;
+        }
+      }
+    }//else
+
+  }//each
+}
+
+@mixin spacing {
+  $cssRef: (
+  top,
+  bottom,
+  y,
+  left,
+  right,
+  x
+  );
+  @each $prefix, $css-prop in (m: margin, p: padding) {
+    @for $i from 0 through 5 {
+      @each $dir in $cssRef {
+          $o: str-slice($dir, 0, 1);
+        .#{$prefix}#{$o}-#{$i} {
+          @if($o == 'x') {
+            @if($i < 3) {
+              @if($i < 1) {
+                #{$css-prop}-left: $i * 0.5rem!important;
+                #{$css-prop}-right: $i * 0.5rem!important;
+              }
+              @else {
+                #{$css-prop}-left: $i * 0.5rem;
+                #{$css-prop}-right: $i * 0.5rem;
+              }
+            }
+            @else {
+              #{$css-prop}-left: ($i * 0.5rem) +  0.5;
+              #{$css-prop}-right: ($i * 0.5rem) +  0.5;
+            }
+          }//if
+          @else if ($o == 'y') {
+            @if($i < 3) {
+              @if($i < 1) {
+                #{$css-prop}-top: $i * 0.5rem!important;
+                #{$css-prop}-bottom: $i * 0.5rem!important;
+              }
+              @else {
+                #{$css-prop}-top: $i * 0.5rem;
+                #{$css-prop}-bottom: $i * 0.5rem;
+              }
+            }
+            @else {
+              #{$css-prop}-top: ($i * 0.5rem) +  0.5;
+              #{$css-prop}-bottom: ($i * 0.5rem) +  0.5;
+            }
+          }//else if
+           @else {
+            @if($i < 3) {
+                @if($i < 1) {
+                  #{$css-prop}-#{$dir}: $i * 0.5rem!important;
+                } @else {
+                  #{$css-prop}-#{$dir}: $i * 0.5rem;
+                }
+            } @else {
+                #{$css-prop}-#{$dir}: ($i * 0.5rem) +  0.5;
+            }
+          }//else
+        }//class
+      }//each
+    }//for
+  }//each
+}//spacing
+
+@mixin wrap{
+  .cf{
+    *zoom: 1;
+    &::before,
+    &::after{
+      content: " ";
+      display: table;
+    }//before,after
+    &::after{
+      clear: both;
+    }//after
+  }//cf
+
+  [class*="container"]{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    @extend .cf;
+  }
+
+  .container{
+    max-width:$limit;
+  }
+  .container-fluid{
+    max-width: 1920px;
+  }
+
+  $row-display:(
+    block,
+    flex
+  );
+  @each $display in $row-display{
+    .row-#{$display}{
+      @if($display == "block"){
+        display: $display;
+      }
+      @else{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+      }//else
+    }//class row
+  }//each
+
+  [class|="row"]{
+    width: calc(#{$max} + #{$gutter * 2});
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+  }//row
+
+  [class|="row"].mx-0{
+    width: 100%;
+  }
+}//wrap
+
+@mixin cols-global($arg){
+  @for $i from 1 through $cols{
+    .col-#{$arg}-#{$i}{
+      @if($arg == "block"){
+        float: left;
+      }//if
+      @else{
+        @if($i < 12){
+          flex: 0 1 ($max / $cols) * $i;
+          max-width: ($max / $cols) * $i;
+        }//if
+        @else{
+          flex: 1 0 ($max / $cols) * $i;
+          max-width: ($max / $cols) * $i;
+        }
+      }//else
+      width: ($max / $cols) * $i;
+    }//class col
+  }//for
+  [class|="col"]{
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+}//cols-global
+
+@mixin cols-media($arg, $breakpoint, $prefix){
+  @media screen and (min-width: #{$breakpoint}){
+    @for $i from 1 through $cols{
+      .col-#{$arg}-#{$prefix}-#{$i}{
+        @if($arg == "block"){
+          float: left;
+        }//if
+        @else{
+          @if($i < 12){
+            flex: 0 1 ($max / $cols) * $i;
+            max-width: ($max / $cols) * $i;
+          }//if
+          @else{
+            flex: 1 0 ($max / $cols) * $i;
+            max-width: ($max / $cols) * $i;
+          }
+        }//else
+        width: ($max / $cols) * $i;
+      }//class col
+    }//for
+  }//media
+}//cols-media
+
+$breakpoint-merge:(
+  xs $xs,
+  sm $sm,
+  md $md,
+  lg $lg,
+  xl $xl
+);
+@mixin jt-ac($arg){
+  $jt-ac-var:(
+    start flex-start,
+    center center,
+    end flex-end,
+    around space-around,
+    between space-between
+  );
+  @each $class, $prop in $jt-ac-var{
+    .#{$arg}-#{$class}{
+      #{$arg}: #{$prop};
+    }
+  }//each
+  @if($arg == "align-content"){
+    .#{$arg}-stretch{
+      #{$arg}: stretch;
+    }
+  }//if
+  @each $prefix, $media in $breakpoint-merge{
+    @media screen and (min-width: $media){
+      @each $class, $prop in $jt-ac-var{
+        .#{$arg}-#{$prefix}-#{$class}{
+          #{$arg}: #{$prop};
+        }
+      }//each
+      @if($arg == "align-content"){
+        .#{$arg}-#{$prefix}-stretch{
+          #{$arg}: stretch;
+        }
+      }//if
+    }//media
+  }//each
+}//jt-ac
+
+@mixin ai($arg){
+  $jt-ac-var:(
+    start flex-start,
+    center center,
+    end flex-end,
+    stretch stretch,
+    baseline baseline 
+  );
+  @each $class, $prop in $jt-ac-var{
+    .#{$arg}-#{$class}{
+      #{$arg}: #{$prop};
+    }
+  }//each
+  @each $prefix, $media in $breakpoint-merge{
+    @media screen and (min-width: $media){
+      @each $class, $prop in $jt-ac-var{
+        .#{$arg}-#{$prefix}-#{$class}{
+          #{$arg}: #{$prop};
+        }
+      }//each
+    }//media
+  }//each
+}//ai
+
+@mixin text-align{
+  $alignment:(
+    left,
+    center,
+    right
+  );
+  @each $align in $alignment{
+    .text-#{$align}{
+      text-align: #{$align};
+    }
+  }//each
+  @each $prefix, $media in $breakpoint-merge{
+    @media screen and (min-width: $media){
+      @each $align in $alignment{
+        .text-#{$prefix}-#{$align}{
+           text-align: #{$align};
+        }
+      }//each
+    }//media
+  }//each
+}//text-align
+
+@mixin font-size{
+  $fonts:(
+  //tag size line-height
+    h1 3rem 1,
+    h2 2.6rem 1.1,
+    h3 2rem 1.2,
+    h4 1.6rem 1.3,
+    h5 1.4rem 1.4,
+    h6 1.25rem 1.6,
+    p 1rem 1
+  );
+  @each $tag, $size, $line-height in $fonts{
+    .#{$tag},#{$tag}{
+      font-size: #{$size};
+      line-height: #{$line-height};
+    }
+  }//each
+}//font-size
+
+@mixin font-weight{
+  $weights:(
+    100,200,300,400,500,600,700,800,900,
+    bold,
+    normal,
+    lighter
+  );
+  @each $weight in $weights{
+    .font-weight-#{$weight}{
+      font-weight: #{$weight};
+    }
+  }//each
+}//font-weight
+
+@mixin normar-use{
+  .fl{float: $fl;}
+  .fr{float: $fr;}
+  .ov-h{overflow: hidden;}
+  .img-wrap{
+    & img{
+      width: 100%;
+      display: block;
+    }
+  }//img-wrap
+  .pos-r{position: $pos-r;}
+  .pos-ab{position: $pos-ab;}
+  .gw{
+    width: 100%;
+    display: block;
+    float: left;
+  }//gw
+}//normal-use
+
+
+@mixin arg-display{
+  $display:(
+    $d-b,//biock
+    $d-ib,//inline-block
+    $d-f,//flex
+    $d-if,//inline-
+    $d-t,//table
+    none
+  );
+  @each $display in $display{
+    .d-#{$display}{
+      display: #{$display};
+    }
+  }//each
+  @each $prefix, $media in $breakpoint-merge{
+    @media screen and (min-width:$media){
+      @each $display in $display{
+        .d-#{$prefix}-#{$display}{
+          display: #{$display};
+        }
+      }//each
+    }//media
+  }//each
+}//display
+
+@mixin sprite{
+  .media{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    & *:nth-child(1){
+      margin-right: 1rem;
+    }
+  
+    & .media-body{
+      flex: 1 1 0%;
+      //flex: flex-grow flex-shrink flex-basis
+      padding: .5rem;
+    }//media-body
+  }//media
+  .sprite{
+    text-align: center;
+    display: inline-block;
+    & img{
+      display: block;
+      width: 100%;
+    }//img
+  }//class sprite
+  @for $i from 2 through 18{
+    .size--#{$i * 10}{
+      width: 10px * $i;
+      height: 10px * $i;
+      line-height: 10px * $i;
+      font-size: 5.5px * $i;
+    }//size
+  }//for
+}//sprite
