@@ -1,0 +1,366 @@
+*{
+    // border: 1px solid rgb(100, 100, 100) !important;
+    position: relative;
+}
+@import "var";
+body{
+  font-family: "PingFang","Microsoft Jheng Hei","蘋方","微軟正黑體","sans-serif";
+}
+.page{
+  min-height: 100vh;
+  background: #e2e2e2;
+  z-index: 1;
+  width: 100vw;
+  overflow: hidden;
+}
+.topbut{
+  display: block;
+  position: absolute;
+  right: 80px;
+  bottom: 195px;
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  color: white;
+  font-size: 12px;
+  line-height: 12px;
+  background-color: rgba($color: #559AC8, $alpha:0.5);
+  text-align: center;
+  // vertical-align:middle;
+}
+header{
+  .bg-img{
+    background-image: url(../images/Hero.png);
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    height: 380px;
+    width: 100%;
+    z-index: 3;
+  }
+  .headertitle{
+    // position: absolute;
+    display: block;
+    width: 100%;
+    z-index: 5;
+    & > h1{
+      margin-top: 89px;
+      font-size: 40px;
+      letter-spacing: 3.89px;
+    }
+    & .Addcity{
+      @media screen and (min-width: $xs) {
+        width: 300px;
+      }
+      @media screen and (min-width: $sm) {
+        width: 452px;
+      }
+      margin-top: 96px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 452px;
+      height: 48px;
+      background: rgba(255,255,255,0.70);
+      border-radius: 3px;
+      
+      
+      & > select{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: 3px solid #FFFFFF;
+        border-radius: 3px;
+
+        // background: transparent;
+
+        appearance:none;
+        padding-left:9.5px;
+        padding-right:40px;
+
+        font-size: 18px;
+        color: #000000;
+        line-height: 21px;
+        outline: 0;
+        z-index: 5;
+        &:focus{
+          border-radius: 3px;
+          // border: 3px solid #ff7b7b;
+          box-shadow: inset 0 0 0 2px $red;
+          // background: #fff;
+          
+        }
+      }
+      & > .addon{
+        width: 48px;
+        height: 48px;
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        text-align: center;
+        line-height: 48px;
+        font-size: 12px;
+        background-color: transparent;
+        // background-image: url(../images/icons_down.png);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        z-index: 4;
+      }
+      //Addcity
+    }
+    //headertitle
+  }
+
+
+  .Popular{
+    @media screen and (min-width: $xs) {
+      width: 300px;
+      & .AreaLabel{
+        display: block;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    @media screen and (min-width: $sm) {
+      width: 600px;
+      & .AreaLabel{
+        display: inline-block;
+        margin-left: 30px;
+      }
+    }
+    @media screen and (min-width: $xl) {
+      width: 800px;
+    }
+    position: relative;
+    margin: 0 auto;
+    margin-top: 79px;
+    padding: 20px 26px 18px;
+    width: 800px;
+    min-height: 112px;
+    
+    z-index: 5;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+    border-radius: 5px;
+    & .Ptitle{
+      font-size: 18px;
+      color: #000000 100%;
+      line-height: 21px;
+      margin-bottom: 14px;
+    }
+    & .AreaLabel{
+      
+      border-radius: 5px;
+      
+      padding: 11px 34px;
+      line-height: 23px;
+      font-size: 20px;
+      color: #FFFFFF;
+      outline: 0;
+      &.bg-po1{
+        background: #8A82CC;
+      }
+      &.bg-orange1{
+        background: #FFA782 ;
+      }
+      &.bg-yello1{
+        background: #F5D005;
+      }
+      &.bg-blue1{
+        background: #559AC8;
+      }
+      &:active{
+        box-shadow: 3px 3px 5px #aaa;
+      }
+    }
+    //Popular
+  }
+
+
+
+  .Dividingline {
+    margin-top: 49px;
+    position: relative;
+    width: 100%;
+    height: 24px;
+    & hr{
+      border: 1px dashed #559AC8;
+      position: relative;
+    }
+    & span{
+      position: absolute;
+      // top: -50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      font-size: 1px;
+      color: #559AC8;
+      line-height: 24px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid #559AC8;
+      background:  #e2e2e2;
+      // background-image: url(../images/icons_down.png);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    //Dividingline
+  }
+  //header
+}
+
+
+
+.Attractions{
+  padding: 84px 40px 41px 24px;
+  @media screen and (min-width: $xs) {
+    padding: 84px 0px 41px;
+  }
+  @media screen and (min-width: $sm) {
+    padding: 84px 45px 41px 29px;
+  }
+  @media screen and (min-width: $md) {
+    padding: 84px 40px 41px 24px;
+  }
+  .Districtname{
+    color: #8A82CC;
+    font-size: 36px;
+    line-height: 43px;
+  }
+  .card-out{
+    float: left;
+    padding-left: 16px;
+    margin-top: 36px;
+    @media screen and (min-width: $xs) {
+      padding-left: 0px;
+      margin: 0 auto;
+      margin-top: 36px;
+      float: none;
+    }
+    @media screen and (min-width: $sm) {
+      padding-left: 16px;
+      float: left;
+    }
+    @media screen and (min-width: $md) {
+      padding-left: 16px;
+    }
+  }
+  .card{ 
+    width: 464px;
+    height: 273px;
+    color: #000;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+    position: relative;
+
+    @media screen and (min-width: $xs) {
+      width: 95%;
+      margin: 0px auto;
+      float: none;
+    }
+    @media screen and (min-width: $sm) {
+      width: 330px;
+    }
+    @media screen and (min-width: $md) {
+      width: 464px;
+      height: 273px;
+    }
+
+
+    .card-img{
+      background-image: url(http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960);
+      width: 100%;
+      height: 155px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 70%  50%;
+      position: relative;
+      & > .name {
+        display: inline-block;
+        font-size: 24px;
+        color: #FFFFFF;
+        line-height: 28px;
+        position: absolute;
+        bottom: 14px;
+        left: 22px;
+        font-weight: 300;
+      }
+      & > .Zone{
+        font-size: 16px;
+        color: #FFFFFF;
+        line-height: 19px;
+        position: absolute;
+        bottom: 11px;
+        right: 24px;
+      }
+    }
+    .card-news{
+      text-align: left;
+      padding: 0px 24px 20px;
+      width: 100%;
+      float: none;
+      p{
+        font-size: 16px;
+        color: #000000;
+        line-height: 16px;
+        margin-top: 16px;
+        & .te-po1{
+          color: #8A82CC;
+        }
+        & .te-orange1{
+          color: #FFA782 ;
+        }
+        & .te-yello1{
+          color: #F5D005;
+        }
+        & .te-blue1{
+          color: #559AC8;
+        }
+        & span[class^='icon']{
+          margin-right: 9px;
+          font-size: 16px;
+          line-height: 16px;
+          width: 18px;
+          display: inline-block;
+        }
+        & span.Ticketinfo{
+         float: right;
+        }
+      }
+    }
+    //card
+  }
+  //Attractions
+}
+nav.pageNumber{
+  margin-top: 44px;
+  margin-bottom: 44px;
+  & ul.pagination{
+    & .page-item{
+      display: inline-block;
+      margin-right: 24px;
+      & > a{
+        display: inline-block;
+        line-height: 17px;
+        font-size: 14px;
+        color: #4A4A4A;
+      }
+    }
+  }
+  
+}
+
+
+footer{
+  background-color: #559AC8;
+  padding: 24px ;
+  color: white;
+  font-size: 14px;
+  line-height: 17px;
+  .te-yello1{
+    color: #F5D005;
+  }
+}

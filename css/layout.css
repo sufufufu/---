@@ -1,0 +1,415 @@
+@charset "UTF-8";
+* {
+  position: relative;
+}
+
+/*顏色*/
+body {
+  font-family: "PingFang","Microsoft Jheng Hei","蘋方","微軟正黑體","sans-serif";
+}
+
+.page {
+  min-height: 100vh;
+  background: #e2e2e2;
+  z-index: 1;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.topbut {
+  display: block;
+  position: absolute;
+  right: 80px;
+  bottom: 195px;
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  color: white;
+  font-size: 12px;
+  line-height: 12px;
+  background-color: rgba(85, 154, 200, 0.5);
+  text-align: center;
+}
+
+header .bg-img {
+  background-image: url(../images/Hero.png);
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  height: 380px;
+  width: 100%;
+  z-index: 3;
+}
+
+header .headertitle {
+  display: block;
+  width: 100%;
+  z-index: 5;
+}
+
+header .headertitle > h1 {
+  margin-top: 89px;
+  font-size: 40px;
+  letter-spacing: 3.89px;
+}
+
+header .headertitle .Addcity {
+  margin-top: 96px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 452px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+}
+
+@media screen and (min-width: 320px) {
+  header .headertitle .Addcity {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  header .headertitle .Addcity {
+    width: 452px;
+  }
+}
+
+header .headertitle .Addcity > select {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 3px solid #FFFFFF;
+  border-radius: 3px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding-left: 9.5px;
+  padding-right: 40px;
+  font-size: 18px;
+  color: #000000;
+  line-height: 21px;
+  outline: 0;
+  z-index: 5;
+}
+
+header .headertitle .Addcity > select:focus {
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 0 2px #cd1e32;
+          box-shadow: inset 0 0 0 2px #cd1e32;
+}
+
+header .headertitle .Addcity > .addon {
+  width: 48px;
+  height: 48px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+  line-height: 48px;
+  font-size: 12px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  z-index: 4;
+}
+
+header .Popular {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 79px;
+  padding: 20px 26px 18px;
+  width: 800px;
+  min-height: 112px;
+  z-index: 5;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 320px) {
+  header .Popular {
+    width: 300px;
+  }
+  header .Popular .AreaLabel {
+    display: block;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  header .Popular {
+    width: 600px;
+  }
+  header .Popular .AreaLabel {
+    display: inline-block;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  header .Popular {
+    width: 800px;
+  }
+}
+
+header .Popular .Ptitle {
+  font-size: 18px;
+  color: #000000 100%;
+  line-height: 21px;
+  margin-bottom: 14px;
+}
+
+header .Popular .AreaLabel {
+  border-radius: 5px;
+  padding: 11px 34px;
+  line-height: 23px;
+  font-size: 20px;
+  color: #FFFFFF;
+  outline: 0;
+}
+
+header .Popular .AreaLabel.bg-po1 {
+  background: #8A82CC;
+}
+
+header .Popular .AreaLabel.bg-orange1 {
+  background: #FFA782;
+}
+
+header .Popular .AreaLabel.bg-yello1 {
+  background: #F5D005;
+}
+
+header .Popular .AreaLabel.bg-blue1 {
+  background: #559AC8;
+}
+
+header .Popular .AreaLabel:active {
+  -webkit-box-shadow: 3px 3px 5px #aaa;
+          box-shadow: 3px 3px 5px #aaa;
+}
+
+header .Dividingline {
+  margin-top: 49px;
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+header .Dividingline hr {
+  border: 1px dashed #559AC8;
+  position: relative;
+}
+
+header .Dividingline span {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  font-size: 1px;
+  color: #559AC8;
+  line-height: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #559AC8;
+  background: #e2e2e2;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.Attractions {
+  padding: 84px 40px 41px 24px;
+}
+
+@media screen and (min-width: 320px) {
+  .Attractions {
+    padding: 84px 0px 41px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .Attractions {
+    padding: 84px 45px 41px 29px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Attractions {
+    padding: 84px 40px 41px 24px;
+  }
+}
+
+.Attractions .Districtname {
+  color: #8A82CC;
+  font-size: 36px;
+  line-height: 43px;
+}
+
+.Attractions .card-out {
+  float: left;
+  padding-left: 16px;
+  margin-top: 36px;
+}
+
+@media screen and (min-width: 320px) {
+  .Attractions .card-out {
+    padding-left: 0px;
+    margin: 0 auto;
+    margin-top: 36px;
+    float: none;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .Attractions .card-out {
+    padding-left: 16px;
+    float: left;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Attractions .card-out {
+    padding-left: 16px;
+  }
+}
+
+.Attractions .card {
+  width: 464px;
+  height: 273px;
+  color: #000;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+@media screen and (min-width: 320px) {
+  .Attractions .card {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .Attractions .card {
+    width: 330px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Attractions .card {
+    width: 464px;
+    height: 273px;
+  }
+}
+
+.Attractions .card .card-img {
+  background-image: url(http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960);
+  width: 100%;
+  height: 155px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 70%  50%;
+  position: relative;
+}
+
+.Attractions .card .card-img > .name {
+  display: inline-block;
+  font-size: 24px;
+  color: #FFFFFF;
+  line-height: 28px;
+  position: absolute;
+  bottom: 14px;
+  left: 22px;
+  font-weight: 300;
+}
+
+.Attractions .card .card-img > .Zone {
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 19px;
+  position: absolute;
+  bottom: 11px;
+  right: 24px;
+}
+
+.Attractions .card .card-news {
+  text-align: left;
+  padding: 0px 24px 20px;
+  width: 100%;
+  float: none;
+}
+
+.Attractions .card .card-news p {
+  font-size: 16px;
+  color: #000000;
+  line-height: 16px;
+  margin-top: 16px;
+}
+
+.Attractions .card .card-news p .te-po1 {
+  color: #8A82CC;
+}
+
+.Attractions .card .card-news p .te-orange1 {
+  color: #FFA782;
+}
+
+.Attractions .card .card-news p .te-yello1 {
+  color: #F5D005;
+}
+
+.Attractions .card .card-news p .te-blue1 {
+  color: #559AC8;
+}
+
+.Attractions .card .card-news p span[class^='icon'] {
+  margin-right: 9px;
+  font-size: 16px;
+  line-height: 16px;
+  width: 18px;
+  display: inline-block;
+}
+
+.Attractions .card .card-news p span.Ticketinfo {
+  float: right;
+}
+
+nav.pageNumber {
+  margin-top: 44px;
+  margin-bottom: 44px;
+}
+
+nav.pageNumber ul.pagination .page-item {
+  display: inline-block;
+  margin-right: 24px;
+}
+
+nav.pageNumber ul.pagination .page-item > a {
+  display: inline-block;
+  line-height: 17px;
+  font-size: 14px;
+  color: #4A4A4A;
+}
+
+footer {
+  background-color: #559AC8;
+  padding: 24px;
+  color: white;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+footer .te-yello1 {
+  color: #F5D005;
+}
+/*# sourceMappingURL=layout.css.map */
