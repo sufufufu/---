@@ -18,6 +18,14 @@ body{
   position: absolute;
   right: 80px;
   bottom: 195px;
+  @media screen and (min-width: $xs) {
+    right: 40px;
+    bottom: 220px;
+  }
+  @media screen and (min-width: $sm) {
+    right: 80px;
+    bottom: 195px;
+  }
   z-index: 10;
   width: 24px;
   height: 24px;
@@ -255,7 +263,7 @@ header{
     background: #FFFFFF;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
     position: relative;
-
+    overflow: hidden;
     @media screen and (min-width: $xs) {
       width: 95%;
       margin: 0px auto;

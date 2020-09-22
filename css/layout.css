@@ -31,6 +31,20 @@ body {
   text-align: center;
 }
 
+@media screen and (min-width: 320px) {
+  .topbut {
+    right: 40px;
+    bottom: 220px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .topbut {
+    right: 80px;
+    bottom: 195px;
+  }
+}
+
 header .bg-img {
   background-image: url(../images/Hero.png);
   background-repeat: no-repeat;
@@ -289,6 +303,7 @@ header .Dividingline span {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   position: relative;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 320px) {
