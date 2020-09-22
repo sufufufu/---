@@ -177,8 +177,8 @@ function PagesShow() {
     const vm = this;
     var pagesstr = '';
     if (vm.pages > 1) {
-        console.log(vm.currentPage);
-        console.log(vm.pages);
+        // console.log(vm.currentPage);
+        // console.log(vm.pages);
         if ((parseInt(vm.currentPage) + 1) > 1) {
             let bestr = '<li class="page-item"><a class="page-link" href="#0" data-value="' + (parseInt(vm.currentPage) - 1) + '"> &#60; prev </a></li > ';
             pagesstr += bestr;
