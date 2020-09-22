@@ -183,7 +183,7 @@ function PagesShow() {
             let bestr = '<li class="page-item"><a class="page-link" href="#0" data-value="' + (parseInt(vm.currentPage) - 1) + '"> &#60; prev </a></li > ';
             pagesstr += bestr;
         };
-        if (vm.currentPage < 5) {
+        if (vm.currentPage < 2) {
             for (let i = 0; i < (parseInt(vm.currentPage) + 5); i++) {
                 // console.log(i);
                 if (i == vm.currentPage) {
@@ -196,7 +196,7 @@ function PagesShow() {
 
             };
         } else {
-            for (let i = (parseInt(vm.currentPage) - 2); i < (parseInt(vm.currentPage) + 5) && i < vm.pages; i++) {
+            for (let i = (parseInt(vm.currentPage) - 2); i < (parseInt(vm.currentPage) + 3) && i < vm.pages; i++) {
                 // console.log(i);
                 if (i == vm.currentPage) {
                     let sstr = '<li class="page-item active"><a class="page-link" href="#0" data-value="' + i + '">' + (i + 1) + '</a></li>';
