@@ -183,17 +183,31 @@ function PagesShow() {
             let bestr = '<li class="page-item"><a class="page-link" href="#0" data-value="' + (parseInt(vm.currentPage) - 1) + '"> &#60; prev </a></li > ';
             pagesstr += bestr;
         };
-        for (let i = 0; i < vm.pages; i++) {
-            // console.log(i);
-            if (i == vm.currentPage) {
-                let sstr = '<li class="page-item active"><a class="page-link" href="#0" data-value="' + i + '">' + (i + 1) + '</a></li>';
-                pagesstr += sstr;
-            } else {
-                let sstr = '<li class="page-item"><a class="page-link" href="#0" data-value="' + i + '">' + (i + 1) + '</a></li>';
-                pagesstr += sstr;
-            }
+        if (vm.currentPage < 5) {
+            for (let i = 0; i < (parseInt(vm.currentPage) + 5); i++) {
+                // console.log(i);
+                if (i == vm.currentPage) {
+                    let sstr = '<li class="page-item active"><a class="page-link" href="#0" data-value="' + i + '">' + (i + 1) + '</a></li>';
+                    pagesstr += sstr;
+                } else {
+                    let sstr = '<li class="page-item"><a class="page-link" href="#0" data-value="' + i + '">' + (i + 1) + '</a></li>';
+                    pagesstr += sstr;
+                }
 
-        };
+            };
+        } else {
+            for (let i = (parseInt(vm.currentPage) - 2); i < (parseInt(vm.currentPage) + 5) && i < vm.pages; i++) {
+                // console.log(i);
+                if (i == vm.currentPage) {
+                    let sstr = '<li class="page-item active"><a class="page-link" href="#0" data-value="' + i + '">' + (i + 1) + '</a></li>';
+                    pagesstr += sstr;
+                } else {
+                    let sstr = '<li class="page-item"><a class="page-link" href="#0" data-value="' + i + '">' + (i + 1) + '</a></li>';
+                    pagesstr += sstr;
+                }
+
+            };
+        }
         if ((parseInt(vm.currentPage) + 1) != vm.pages) {
             let afstr = '<li class="page-item"><a class="page-link" href="#0" data-value="' + (parseInt(vm.currentPage) + 1) + '">next &#62;</a></li>';
             pagesstr += afstr;
