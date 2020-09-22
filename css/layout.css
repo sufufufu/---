@@ -313,7 +313,6 @@ header .Dividingline span {
 }
 
 .Attractions .card .card-img {
-  background-image: url(http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960);
   width: 100%;
   height: 155px;
   background-repeat: no-repeat;
@@ -331,6 +330,7 @@ header .Dividingline span {
   bottom: 14px;
   left: 22px;
   font-weight: 300;
+  background: rgba(50, 50, 50, 0.3);
 }
 
 .Attractions .card .card-img > .Zone {
@@ -392,6 +392,11 @@ nav.pageNumber {
 nav.pageNumber ul.pagination .page-item {
   display: inline-block;
   margin-right: 24px;
+  padding: 5px;
+}
+
+nav.pageNumber ul.pagination .page-item.active > a {
+  color: #559AC8;
 }
 
 nav.pageNumber ul.pagination .page-item > a {

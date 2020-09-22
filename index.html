@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <div class="page">
-        <a class="topbut">
+    <div class="page" id="page">
+        <a class="topbut" href="#page" id="top">
             <p class="">︿</p>
         </a>
         <header class="container">
@@ -20,20 +20,19 @@
             <div class="headertitle">
                 <h1 class="text-white text-center">高雄旅遊網</h1>
                 <div class="Addcity">
-                    <select name="add-city" id="add-city" class="">
-                        <option selected disabled="disabled">- - 請選擇行政區- -</option>
-                        <option value="">0101</option>
+                    <select name="add-city" id="add-city" class="district">
+                        <option value="all" selected disabled="disabled">- - 請選擇行政區- -</option>
                     </select>
                     <label for="add-city" class="addon icon-under"></label>
                 </div>
 
             </div>
-            <div class="Popular">
+            <div class="Popular" id="Popular">
                 <h3 class="Ptitle">熱門行政區</h3>
-                <button class="AreaLabel bg-po1">苓雅區</button>
-                <button class="AreaLabel bg-orange1">三民區</button>
-                <button class="AreaLabel bg-yello1">新興區</button>
-                <button class="AreaLabel bg-blue1">鹽埕區</button>
+                <button class="AreaLabel bg-po1" value="苓雅區">苓雅區</button>
+                <button class="AreaLabel bg-orange1" value="三民區">三民區</button>
+                <button class="AreaLabel bg-yello1" value="新興區">新興區</button>
+                <button class="AreaLabel bg-blue1" value="左營區">左營區</button>
             </div>
             <div class="text-center Dividingline">
                 <hr>
@@ -41,10 +40,34 @@
             </div>
         </header>
         <article class="container text-center Attractions">
-            <h2 class="Districtname">三民區</h2>
-            <section class="">
+            <h2 class="Districtname" id="Districtname">三民區</h2>
+            <section class="" id="cardAttractions">
 
-                <div class="card-out">
+                <!-- <div class="card-out">
+                    <div class="card">
+                        <div class="card-img"
+                            style="background-image: url(http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960);">
+                            <h3 class="name">高雄願景館</h3>
+                            <p class="Zone">三民區</p>
+                        </div>
+                        <div class="card-news">
+                            <p class=""><span class="icon-clock te-po1"></span><span
+                                    class="time">週二至週日10:00-18:00，每週一公休</span>
+                            </p>
+                            <p class=""><span class="icon-Address te-orange1"></span><a
+                                    class="address">高雄市三民區建國二路318號</a>
+                            </p>
+                            <p class="">
+                                <span class=""><span class="icon-phone te-blue1"></span><a
+                                        class="phone">886-7-2363357</a></span>
+                                <span class="Ticketinfo"><span class="icon-ticket  te-yello1"></span><span
+                                        class="">免費參觀</span></span>
+                            </p>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="card-out">
                     <div class="card">
                         <div class="card-img">
                             <h3 class="name">高雄願景館</h3>
@@ -249,43 +272,15 @@
                             </p>
                         </div>
                     </div>
-                </div>
-
-                <div class="card-out">
-                    <div class="card">
-                        <div class="card-img">
-                            <h3 class="name">高雄願景館</h3>
-                            <p class="Zone">三民區</p>
-                        </div>
-                        <div class="card-news">
-                            <p class=""><span class="icon-clock te-po1"></span><span
-                                    class="time">週二至週日10:00-18:00，每週一公休</span>
-                            </p>
-                            <p class=""><span class="icon-Address te-orange1"></span><a
-                                    class="address">高雄市三民區建國二路318號</a>
-                            </p>
-                            <p class="">
-                                <span class=""><span class="icon-phone te-blue1"></span><a
-                                        class="phone">886-7-2363357</a></span>
-                                <span class="Ticketinfo"><span class="icon-ticket  te-yello1"></span><span
-                                        class="">免費參觀</span></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </section>
         </article>
         <article class="container text-center">
             <nav class="pageNumber">
-                <ul class="pagination">
+                <ul class="pagination" id="pagination">
                     <li class="page-item"><a class="page-link" href="#"> &#60; prev </a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                    <li class="page-item active"><a class="page-link" href="#" data-value="1">1</a></li>
                     <li class="page-item"><a class="page-link" href="#">next &#62;</a></li>
                 </ul>
             </nav>
@@ -296,6 +291,7 @@
             <p class="mt-2">2020 六角學院課程練習作品 蘇喜福</p>
         </footer>
     </div>
+    <script src="js/all.js"></script>
 </body>
 
 </html>

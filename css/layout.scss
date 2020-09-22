@@ -271,7 +271,7 @@ header{
 
 
     .card-img{
-      background-image: url(http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960);
+      // background-image: url(http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960);
       width: 100%;
       height: 155px;
       background-repeat: no-repeat;
@@ -287,6 +287,7 @@ header{
         bottom: 14px;
         left: 22px;
         font-weight: 300;
+        background: rgba(50,50,50,0.3);
       }
       & > .Zone{
         font-size: 16px;
@@ -342,6 +343,12 @@ nav.pageNumber{
     & .page-item{
       display: inline-block;
       margin-right: 24px;
+      padding: 5px;
+      &.active{
+        & > a{
+           color:  #559AC8;
+        } 
+      }
       & > a{
         display: inline-block;
         line-height: 17px;
